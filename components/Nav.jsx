@@ -11,10 +11,14 @@ const Nav = () => {
       <Link href="/" className="flex gap-2 flex-center">
         <Image src="/assets/images/LOGO2.png" 
          alt="GWM Logo"
-         width={30}
-         height={30}
+         width={40}
+         height={40}
          className="object-contain"
         />
+        <Image src="/assets/images/STRKLogo.png" alt="Logo" 
+        className="object-contain"
+        width={80}
+        height={50}/>
       </Link>
     </nav>
   )
