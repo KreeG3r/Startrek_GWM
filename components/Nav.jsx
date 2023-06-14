@@ -10,6 +10,7 @@ const Nav = () => {
 
   const [providers, setProvider] = useState
   (null);
+  const [toggleDropdown,settoggleDropdown] = useState (false);
 
   useEffect(() => {
     const setProvider = async () => {
@@ -57,6 +58,64 @@ const Nav = () => {
               />
             </Link>
           </div>
+        ): (
+          <>
+          {providers && 
+            Object.keys(providers).map((provider) =>
+            (
+              <button
+              type="button"
+              key={provider.name}
+              onClick={() => signIn(provider.id)}
+              className='black_btn'
+              >
+                Sign In
+              </button>
+            ))}
+          </>
+        )}
+      </div>
+
+      {/* mobile navigation */}   
+      <div className='sm:hidden flex relative'>
+        {isUserloggedIn ? (
+      <div className="felx">
+        <Image src="/assets/images/LOGO2.png" 
+              width={37}
+              height={37}
+              className='rounded-full'
+              alt='profile'
+              onClick={() => settoggleDropdown((prev) => !prev)}
+              />
+
+              {toggleDropdown && (
+                <div className='dropdown'>
+                  <Link
+                   href="/profile"
+                   className="dropdown_link"
+                   onClick={() => setToggleDropdown(false)}
+                  >
+                    My Profie
+                  </Link>
+                  <Link
+                   href="/create-prompt"
+                   className="dropdown_link"
+                   onClick={() => setToggleDropdown(false)}
+                  >
+                    Create Prompt
+                  </Link>
+                  <button
+                  type='button'
+                  onClick={() => { setToggleDropdown(false);
+                  signOut(); 
+                }}
+                className='mt-5 w-full black_btn'
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              )}
+       </div>  
         ): (
           <>
           {providers && 
