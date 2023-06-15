@@ -25,16 +25,12 @@ const Nav = () => {
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
-        <Image src="/assets/images/LOGO2.png" 
-         alt="GWM Logo"
-         width={40}
-         height={40}
+        <Image src="/assets/images/GWM_STRTRK.JPG" 
+         alt="GWM Suanluang"
+         width={50}
+         height={50}
          className="object-contain"
         />
-        <Image src="/assets/images/STRKLogo.png" alt="Logo" 
-        className="object-contain"
-        width={80}
-        height={50}/>
       </Link>
 
       {/* desktop navigation */}
